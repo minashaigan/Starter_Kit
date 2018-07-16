@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Transformers;
-
 use League\Fractal\TransformerAbstract;
 use Modules\Course\Entities\Course;
 
@@ -18,7 +16,7 @@ class CourseTransformer extends TransformerAbstract
     ];
     /**
      * A Fractal transformer.
-     * 
+     *
      * @param Course $course
      *
      * @return array

@@ -1,11 +1,8 @@
 <?php
-
 namespace App\Transformers;
-
 use League\Fractal\TransformerAbstract;
 use App\User;
 use Modules\Course\Entities\Course;
-use Modules\Course\Entities\Section;
 
 class UserTransformer extends TransformerAbstract
 {
@@ -18,7 +15,6 @@ class UserTransformer extends TransformerAbstract
         'email',
         'courses',
     ];
-
     /**
      * A Fractal transformer.
      *
@@ -57,7 +53,6 @@ class UserTransformer extends TransformerAbstract
     public function includeCourses(User $user)
     {
         $courses = $user->courses()->get();
-
         return $this->collection($courses, function (Course $course) {
             return [
                 'name' => $course['name'],
