@@ -2,7 +2,7 @@
 
 Documentation for the framework can be found on the [Lumen website](http://lumen.laravel.com/docs).
 
-## Serving Your Application
+### Serving Your Application
 
 <code>php -S localhost:8000 -t public</code>
 
@@ -10,7 +10,7 @@ Documentation for the framework can be found on the [Lumen website](http://lumen
 
 Package can be found on the [nWidart Repository](https://github.com/nWidart/laravel-modules).
 
-## Artisan commands
+### Artisan commands
 
 <code>php artisan module:make Course</code>
 
@@ -30,7 +30,7 @@ Package can be found on the [dingo Repository](https://github.com/dingo/api).
 
 Package can be found on the [barryvdh Repository](https://github.com/barryvdh/laravel-debugbar).
 
-## REST format
+### REST format
 
 <code>"_debugbar": {
         "__meta":
@@ -49,7 +49,7 @@ Package can be found on the [barryvdh Repository](https://github.com/barryvdh/la
 
 Package can be found on the [spatie Repository](https://github.com/spatie/laravel-fractal).
 
-## Artisan commands
+### Artisan commands
 
 <code>php artisan make:transformer CourseTransformer</code>
 
