@@ -1,21 +1,62 @@
 # Lumen PHP Framework
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://poser.pugx.org/laravel/lumen-framework/d/total.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Unstable Version](https://poser.pugx.org/laravel/lumen-framework/v/unstable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
-
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
-
-## Official Documentation
-
 Documentation for the framework can be found on the [Lumen website](http://lumen.laravel.com/docs).
 
-## Security Vulnerabilities
+### Serving Your Application
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+<code>php -S localhost:8000 -t public</code>
 
-## License
+# Laravel-Modules
 
-The Lumen framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+Package can be found on the [nWidart Repository](https://github.com/nWidart/laravel-modules).
+
+### Artisan commands
+
+<code>php artisan module:make Course</code>
+
+<code>php artisan module:make-migration create_courses_table Course</code>
+
+<code>php artisan module:make-controller CourseController Course</code>
+
+<code>php artisan module:make-model Course Course</code>
+
+<code>php artisan module:disable Course</code>
+
+# Dingo Api
+
+Package can be found on the [dingo Repository](https://github.com/dingo/api).
+
+# Laravel Debugbar
+
+Package can be found on the [barryvdh Repository](https://github.com/barryvdh/laravel-debugbar).
+
+### REST format
+
+<code>"_debugbar": {
+        "__meta":
+        "php":
+        "messages":
+        "time":
+        "memory":
+        "exceptions":
+        "views":
+        "queries":
+        "gate":
+        }
+</code>
+
+# Laravel Fractal
+
+Package can be found on the [spatie Repository](https://github.com/spatie/laravel-fractal).
+
+### Artisan commands
+
+<code>php artisan make:transformer CourseTransformer</code>
+
+# JSON Web Token Authentication
+
+Package can be found on the [tymon Repository](https://github.com/tymondesigns/jwt-auth).
+
+# Redis Cache
+
+Documentation for the framework can be found on the [Lumen website/cache](https://lumen.laravel.com/docs/5.6/cache).
