@@ -19,12 +19,12 @@ try {
 |
 */
 
-$app = new Laravel\Lumen\Application(
+$app = new App\Application(
     realpath(__DIR__.'/../')
 );
 
 $app->bind('path.public', function() {
-    return __DIR__ . 'public/';
+    return __DIR__ . '/../public/';
 });
 
  $app->withFacades();
