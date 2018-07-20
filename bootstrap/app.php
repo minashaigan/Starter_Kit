@@ -33,6 +33,9 @@ $app->bind('path.public', function() {
 
 //config
 $app->configure('auth');
+$app->configure('database');
+$app->configure('cache');
+$app->configure('queue');
 $app->configure('jwt');
 $app->configure('api');
 $app->configure('debugbar');
@@ -99,6 +102,7 @@ $app->singleton(
  $app->register(App\Providers\AppServiceProvider::class);
  $app->register(App\Providers\AuthServiceProvider::class);
  $app->register(App\Providers\EventServiceProvider::class);
+ $app->register(Illuminate\Redis\RedisServiceProvider::class);
  if (env('APP_DEBUG')) {
      $app->register(Barryvdh\Debugbar\LumenServiceProvider::class);
  }
@@ -109,7 +113,6 @@ $app->singleton(
      return new Dingo\Api\Auth\Provider\JWT($app['Tymon\JWTAuth\JWTAuth']);
  });
  $app->register(\Nwidart\Modules\LumenModulesServiceProvider::class);
- $app->register(Illuminate\Redis\RedisServiceProvider::class);
 
 
 /*
