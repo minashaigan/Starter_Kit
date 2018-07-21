@@ -12,12 +12,6 @@ Package can be found on the [nWidart Repository](https://github.com/nWidart/lara
 
 for more information check [nWidart Website](https://nwidart.com/laravel-modules/v3/introduction).
 
-<i>class Config not found</i>
-</br>
-<b>solution:</b>
-</br>
-<code>app('config')->get('')</code> in ModuleServiceProvider
-
 ### Artisan commands
 
 <code>php artisan module:make Course</code>
