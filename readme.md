@@ -18,9 +18,9 @@ for more information check [nWidart Website](https://nwidart.com/laravel-modules
 
 <code>php artisan module:make-migration create_courses_table Course</code>
 
-<code>php artisan module:make-controller CourseController Course</code>
-
 <code>php artisan module:make-model Course Course</code>
+
+<code>php artisan module:make-controller CourseController Course</code>
 
 <code>php artisan module:disable Course</code>
 
