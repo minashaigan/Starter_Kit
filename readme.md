@@ -10,6 +10,14 @@ Documentation for the framework can be found on the [Lumen website](http://lumen
 
 Package can be found on the [nWidart Repository](https://github.com/nWidart/laravel-modules).
 
+for more information check [nWidart Website](https://nwidart.com/laravel-modules/v3/introduction).
+
+<i>class Config not found</i>
+</br>
+<b>solution:</b>
+</br>
+<code>app('config')->get('')</code> in ModuleServiceProvider
+
 ### Artisan commands
 
 <code>php artisan module:make Course</code>
@@ -48,6 +56,8 @@ Package can be found on the [barryvdh Repository](https://github.com/barryvdh/la
 # Laravel Fractal
 
 Package can be found on the [spatie Repository](https://github.com/spatie/laravel-fractal).
+
+for more information check [Fractal Website](https://fractal.thephpleague.com/).
 
 ### Artisan commands
 
