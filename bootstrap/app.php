@@ -27,9 +27,11 @@ $app->bind('path.public', function() {
     return __DIR__ . '/../public/';
 });
 
- $app->withFacades();
+$app->withFacades();
 
- $app->withEloquent();
+class_alias('Illuminate\Support\Facades\Config', 'Config');
+
+$app->withEloquent();
 
 //config
 $app->configure('auth');
@@ -41,8 +43,6 @@ $app->configure('api');
 $app->configure('debugbar');
 $app->configure('modules');
 $app->configure('fractal');
-$app->configure('database');
-
 /*
 |--------------------------------------------------------------------------
 | Register Container Bindings
@@ -64,6 +64,11 @@ $app->singleton(
     App\Console\Kernel::class
 );
 
+$app->singleton(
+    \App\Helper\Config\Repository::class,
+    App\Helper\Facade\Config::class
+);
+
 /*
 |--------------------------------------------------------------------------
 | Register Middleware
@@ -75,17 +80,17 @@ $app->singleton(
 |
 */
 
- $app->middleware([
+$app->middleware([
     App\Http\Middleware\ExampleMiddleware::class
- ]);
+]);
 
- $app->routeMiddleware([
-     'auth' => App\Http\Middleware\Authenticate::class,
- ]);
+$app->routeMiddleware([
+    'auth' => App\Http\Middleware\Authenticate::class,
+]);
 
- $app->routeMiddleware([
-     'profile_json_response' => App\Http\Middleware\ProfileJsonResponse::class,
- ]);
+$app->routeMiddleware([
+    'profile_json_response' => App\Http\Middleware\ProfileJsonResponse::class,
+]);
 
 
 /*
@@ -99,20 +104,21 @@ $app->singleton(
 |
 */
 
- $app->register(App\Providers\AppServiceProvider::class);
- $app->register(App\Providers\AuthServiceProvider::class);
- $app->register(App\Providers\EventServiceProvider::class);
- $app->register(Illuminate\Redis\RedisServiceProvider::class);
- if (env('APP_DEBUG')) {
-     $app->register(Barryvdh\Debugbar\LumenServiceProvider::class);
- }
- $app->register(Dingo\Api\Provider\LumenServiceProvider::class);
- $app->register(Tymon\JWTAuth\Providers\LumenServiceProvider::class);
- $app->register(Spatie\Fractal\FractalServiceProvider::class);
- app('Dingo\Api\Auth\Auth')->extend('jwt', function ($app) {
-     return new Dingo\Api\Auth\Provider\JWT($app['Tymon\JWTAuth\JWTAuth']);
- });
- $app->register(\Nwidart\Modules\LumenModulesServiceProvider::class);
+$app->register(App\Providers\AppServiceProvider::class);
+$app->register(App\Providers\AuthServiceProvider::class);
+$app->register(App\Providers\EventServiceProvider::class);
+$app->register(Illuminate\Redis\RedisServiceProvider::class);
+if (env('APP_DEBUG')) {
+    $app->register(Barryvdh\Debugbar\LumenServiceProvider::class);
+}
+$app->register(Dingo\Api\Provider\LumenServiceProvider::class);
+$app->register(Tymon\JWTAuth\Providers\LumenServiceProvider::class);
+$app->register(Spatie\Fractal\FractalServiceProvider::class);
+app('Dingo\Api\Auth\Auth')->extend('jwt', function ($app) {
+    return new Dingo\Api\Auth\Provider\JWT($app['Tymon\JWTAuth\JWTAuth']);
+});
+$app->register(App\Providers\ConfigServiceProvider::class);
+$app->register(\Nwidart\Modules\LumenModulesServiceProvider::class);
 
 
 /*
@@ -130,7 +136,16 @@ $app->router->group([
     'namespace' => 'App\Http\Controllers',
 ], function ($router) {
     require __DIR__.'/../routes/web.php';
-    require __DIR__.'/../routes/v1.php';
 });
+
+$app['Dingo\Api\Exception\Handler']->setErrorFormat([
+    'error' => [
+        'message' => ':message',
+        'errors' => ':errors',
+        'code' => ':code',
+        'status_code' => ':status_code',
+        'debug' => ':debug'
+    ]
+]);
 
 return $app;
