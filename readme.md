@@ -12,21 +12,15 @@ Package can be found on the [nWidart Repository](https://github.com/nWidart/lara
 
 for more information check [nWidart Website](https://nwidart.com/laravel-modules/v3/introduction).
 
-<i>class Config not found</i>
-</br>
-<b>solution:</b>
-</br>
-<code>app('config')->get('')</code> in ModuleServiceProvider
-
 ### Artisan commands
 
 <code>php artisan module:make Course</code>
 
 <code>php artisan module:make-migration create_courses_table Course</code>
 
-<code>php artisan module:make-controller CourseController Course</code>
-
 <code>php artisan module:make-model Course Course</code>
+
+<code>php artisan module:make-controller CourseController Course</code>
 
 <code>php artisan module:disable Course</code>
 
@@ -66,6 +60,8 @@ for more information check [Fractal Website](https://fractal.thephpleague.com/).
 # JSON Web Token Authentication
 
 Package can be found on the [tymon Repository](https://github.com/tymondesigns/jwt-auth).
+
+for more information check [JWT Auth](http://jwt-auth.readthedocs.io/en/develop/).
 
 # Redis Cache
 
