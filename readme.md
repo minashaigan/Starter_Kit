@@ -61,6 +61,8 @@ for more information check [Fractal Website](https://fractal.thephpleague.com/).
 
 Package can be found on the [tymon Repository](https://github.com/tymondesigns/jwt-auth).
 
+for more information check [JWT Auth](http://jwt-auth.readthedocs.io/en/develop/).
+
 # Redis Cache
 
 Documentation for the framework can be found on the [Lumen website/cache](https://lumen.laravel.com/docs/5.6/cache).
