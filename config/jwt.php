@@ -85,7 +85,7 @@ return [
     | systems in place to revoke the token if necessary.
     |
     */
-    'ttl' => env('JWT_TTL', 60),
+    'ttl' => env('JWT_TTL', null),
     /*
     |--------------------------------------------------------------------------
     | Refresh time to live
@@ -128,7 +128,6 @@ return [
     'required_claims' => [
         'iss',
         'iat',
-        'exp',
         'nbf',
         'sub',
         'jti',

@@ -34,15 +34,16 @@ class_alias('Illuminate\Support\Facades\Config', 'Config');
 $app->withEloquent();
 
 //config
+$app->configure('api');
 $app->configure('auth');
 $app->configure('database');
 $app->configure('cache');
 $app->configure('queue');
 $app->configure('jwt');
-$app->configure('api');
 $app->configure('debugbar');
 $app->configure('modules');
 $app->configure('fractal');
+
 /*
 |--------------------------------------------------------------------------
 | Register Container Bindings
@@ -136,6 +137,7 @@ $app->router->group([
     'namespace' => 'App\Http\Controllers',
 ], function ($router) {
     require __DIR__.'/../routes/web.php';
+    require __DIR__.'/../routes/v1.php';
 });
 
 $app['Dingo\Api\Exception\Handler']->setErrorFormat([
