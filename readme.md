@@ -66,3 +66,5 @@ for more information check [JWT Auth](http://jwt-auth.readthedocs.io/en/develop/
 # Redis Cache
 
 Documentation for the framework can be found on the [Lumen website/cache](https://lumen.laravel.com/docs/5.6/cache).
+
+for more information check [Christophe videos](https://www.youtube.com/watch?v=S_jA39Uayak&list=PLXM5y5j_b0mMdVF5p_2ug_b5tWqah_tfJ).
