@@ -37,10 +37,10 @@ class ApiAuthController extends Controller
             'password' => 'required|min:6|confirmed',
         ]);
 
-        $user = new User();
-        $user['email'] = $request['email'];
-        $user['password'] = app('hash')->make($request->get('password'));
-        $user->save();
+        User::query()->create([
+            'email' => $request['email'],
+            'password' => app('hash')->make($request->get('password'))
+        ]);
 
         try {
             if (! $token = $this->guard()->attempt($credentials)) {
@@ -109,7 +109,7 @@ class ApiAuthController extends Controller
             'new_password' => 'required|min:6',
         ]);
 
-        if($user = JWTAuth::parseToken()->authenticate()){
+        if($user = app('Dingo\Api\Auth\Auth')->user()){
 
             $credentials = [
                 'email' => $user->email,
